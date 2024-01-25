@@ -14,7 +14,7 @@ const FetchingItems = () => {
     const controller = new AbortController();
     const signal = controller.signal;
     dispatch(fetchingActions.markFetchStart());
-    fetch("http://localhost:8080/items", { signal })
+    fetch("https://myntra-backend-server.onrender.com", { signal })
       .then((res) => res.json())
       .then(({ items }) => {
         dispatch(fetchingActions.markFetchDone());
